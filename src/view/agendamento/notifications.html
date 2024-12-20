@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard de Agendamento</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/css/agendamento/notifications.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="logo">
+          <h2>Agendamento</h2>
+        </div>
+        <div class="main-sidebar">
+          <ul>
+            <li class="active" data-page="dashboard">
+              <i class="ri-dashboard-line"></i>
+              <p>Dashboard</p>
+            </li>
+            <li data-page="waiting">
+              <i class="ri-hourglass-fill"></i>
+              <p>Aguardando</p>
+            </li>
+            <li class="has-submenu" data-page="completed">
+              <i class="ri-calendar-check-line"></i>
+              <p>Agenda Completa</p>
+            </li>
+            <li id="notification" data-page="notifications">
+              <i class="ri-notification-line"></i>
+              <p>Notificação</p>
+            </li>
+            <li id="config">
+              <i class="ri-settings-2-line"></i>
+              <p>Gerenciar Conta</p>
+              <i class="ri-arrow-down-s-line arrow-option"></i>
+            </li>
+            <ul id="subMenu">
+              <li>
+                <i class="ri-logout-box-line"></i>
+                <p>Encerrar Sessão</p>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content" id="contentArea">
+        <div class="listNotifications">
+          <h1>Notificações</h1>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Assunto</th>
+                  <th>Descrição</th>
+                  <th>Data</th>
+                  <th>Marcar como lida</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Novo Agendamento</strong></td>
+                  <td>
+                    📌 Uma nova solicitação de agendamento foi registrada. Por
+                    favor, verifique os detalhes e confirme a disponibilidade.
+                    <br />
+                    <br />
+                    <strong style="color: rgb(0, 153, 255)"
+                      >ID do Agendamento:</strong
+                    >
+                    <span id="idagendamento" style="color: rgb(0, 153, 255)"
+                      >#4343432</span
+                    >
+                  </td>
+                  <td>18/12/2024</td>
+                  <td style="text-align: center">
+                    <input type="checkbox" name="lido" id="inputLido1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Agendamento Cancelado</td>
+                  <td>
+                    📢 O agendamento foi cancelado devido ao não cumprimento dos
+                    prazos estabelecidos. O setor de agendamento será
+                    responsável por entrar em contato com o fornecedor via
+                    e-mail ou WhatsApp, enviando o link e o código de
+                    autenticação para refazer a solicitação de entrega.
+                    <br /><br />
+                    <strong style="color: rgb(0, 153, 255)"
+                      >ID do Agendamento:</strong
+                    >
+                    <span id="idagendamento" style="color: rgb(0, 153, 255)"
+                      >#4343432</span
+                    >
+                  </td>
+                  <td>18/12/2024</td>
+                  <td style="text-align: center">
+                    <input type="checkbox" name="lido" id="inputLido1" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="exitSessionModal">
+      <div class="exitSession">
+        <h1>Você tem certeza de que deseja encerrar sua sessão?</h1>
+        <div class="main-exit">
+          <div class="buttons">
+            <button id="btnCancelar" class="cancel-btn">Cancelar</button>
+            <button id="btnDeslogin" class="logout-btn">Encerrar Sessão</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/public/js/agendamento/notifications.js"></script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criação de Agendamento</title>
+    <link rel="stylesheet" href="/public/css/fornecedor/agendamento.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h2>Criação de Agendamento</h2>
+
+        <!-- Barra de Progresso -->
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Etapas com ícones -->
+        <div class="step-indicator">
+          <div class="step" id="step1" onclick="changeStep(1)">
+            <i class="fas fa-info-circle"></i>
+            <p>1. Informações de Contato</p>
+          </div>
+          <div class="step" id="step2" onclick="changeStep(2)">
+            <i class="fas fa-search"></i>
+            <p>2. Detalhes da Carga</p>
+          </div>
+          <div class="step" id="step3" onclick="changeStep(3)">
+            <i class="fas fa-check-circle"></i>
+            <p>3. Confirmação</p>
+          </div>
+        </div>
+
+        <div id="step1-content" class="step-content active">
+          <h3>Etapa 1: Informações de Contato</h3>
+          <form id="contactForm">
+            <input
+              type="text"
+              id="name"
+              placeholder="Digite o nome do fornecedor"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              placeholder="Digite seu e-mail (ex: email@dominio.com)"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Digite seu telefone com DDD (ex: 11 99999-9999)"
+              required
+            />
+            <button type="button" id="nextStep1" onclick="changeStep(2)">
+              Próxima Etapa
+            </button>
+          </form>
+        </div>
+
+        <div id="step2-content" class="step-content">
+          <h3>Etapa 2: Detalhes da Carga</h3>
+          <form id="loadForm">
+            <div class="form-group">
+              <input
+                type="text"
+                id="product"
+                placeholder="Informe o nome do produto a ser transportado"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="number"
+                id="quantity"
+                placeholder="Informe a quantidade do produto"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                id="invoiceNumber"
+                placeholder="Digite o número da nota fiscal"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <select name="loadType" id="loadType" required>
+                <option value="">Escolha o tipo de carga</option>
+                <option value="paletizada">Paletizada</option>
+                <option value="batida">Batida</option>
+                <option value="mista">Mista</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="date"
+                id="deliveryDate"
+                placeholder="Selecione a data da entrega"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <select name="deliveryHour" id="deliveryHour" required>
+                <option value="">
+                  Selecione o horário disponível para a entrega
+                </option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select name="vehicleType" id="vehicleType" required>
+                <option value="">Escolha o tipo de transporte</option>
+                <option value="carro">Carro</option>
+                <option value="caminhao">Caminhão</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <textarea
+                id="observations"
+                placeholder="Adicione observações importantes sobre o agendamento (opcional)"
+              ></textarea>
+            </div>
+            <div class="form-buttons">
+              <button type="button" id="nextStep2" onclick="changeStep(3)">
+                Próxima Etapa
+              </button>
+              <button type="button" id="prevStep2" onclick="changeStep(1)">
+                Voltar
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Etapa 3: Confirmação do Agendamento -->
+        <div id="step3-content" class="step-content">
+          <h3>Etapa 3: Confirmação do Agendamento</h3>
+          <div id="confirmationData"></div>
+          <div class="buttons">
+            <button type="button" id="confirmBooking">
+              Confirmar Agendamento
+            </button>
+            <button type="button" id="prevStep3" onclick="changeStep(2)">
+              Voltar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="viewerSucess" id="viewerSucess">
+        <!-- Alterar aqui para "viewerSucess" -->
+        <div class="viewer">
+          <div class="info">
+            <h2>Agendamento #<span id="agendamentoNumero">2423</span></h2>
+            <div class="modal-body">
+              <p><strong>Agendamento Quase Confirmado</strong></p>
+              <p>
+                O agendamento foi enviado para o setor responsável. Assim que o
+                setor responsável mudar o status, você será informado via
+                e-mail.
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button id="closeModal" class="close-btn-footer">
+                <i class="fas fa-arrow-left"></i> Fechar
+              </button>
+            </div>
+          </div>
+
+          <img src="/public/image/box.jpeg" alt="Imagem de Confirmação" />
+        </div>
+      </div>
+    </div>
+
+    <script src="/public/js/fornecedor/agendamento.js"></script>
+  </body>
+</html>

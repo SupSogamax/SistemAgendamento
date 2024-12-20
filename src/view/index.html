@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Sistema de Agendamentos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-header">
+        <i class="ri-calendar-check-fill"></i>
+        <h1>Bem-vindo ao Sistema de Agendamentos</h1>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <div class="input-group">
+          <label for="username" aria-label="Usuário">
+            <i class="ri-user-line"></i>
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            placeholder="Digite seu usuário"
+            aria-required="true"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password" aria-label="Senha">
+            <i class="ri-lock-line"></i>
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Digite sua senha"
+            aria-required="true"
+          />
+          <i
+            class="ri-eye-off-line toggle-password"
+            id="toggle-password"
+            title="Mostrar/ocultar senha"
+          ></i>
+        </div>
+
+        <button type="submit" id="login-btn" class="btn-primary">Entrar</button>
+
+        <div class="links">
+          <a href="#" id="forgot-password">Esqueceu a senha?</a>
+        </div>
+      </form>
+    </div>
+
+    <script src="/public/js/login.js"></script>
+  </body>
+</html>
