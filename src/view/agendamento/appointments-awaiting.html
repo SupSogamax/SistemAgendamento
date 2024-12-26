@@ -15,46 +15,75 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="sidebar">
-        <div class="logo">
-          <h2>Agendamento</h2>
+      <nav class="navbar">
+        <div class="navbar-logo">
+          <h1>Agendamento</h1>
         </div>
-        <div class="main-sidebar">
-          <ul>
-            <li class="active" data-page="dashboard">
-              <i class="ri-dashboard-line"></i>
-              <p>Dashboard</p>
+        <div class="navbar-menu">
+          <ul class="navbar-items">
+            <li
+              class="navbar-item active"
+              data-page="dashboard"
+              aria-label="Dashboard"
+            >
+              <button class="tooltip">
+                <i class="ri-dashboard-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Dashboard</span>
+              </button>
             </li>
-            <li data-page="waiting">
-              <i class="ri-hourglass-fill"></i>
-              <p>Aguardando</p>
+            <li class="navbar-item" data-page="waiting" aria-label="Em Espera">
+              <button class="tooltip">
+                <i class="ri-hourglass-fill" aria-hidden="true"></i>
+                <span class="tooltip-text">Em Espera</span>
+              </button>
             </li>
-            <li class="has-submenu" data-page="completed">
-              <i class="ri-calendar-check-line"></i>
-              <p>Agenda Completa</p>
+            <li
+              class="navbar-item has-submenu"
+              data-page="completed"
+              aria-label="Completados"
+            >
+              <button class="tooltip">
+                <i class="ri-calendar-check-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Completados</span>
+              </button>
             </li>
-            <li id="notification" data-page="notifications">
-              <i class="ri-notification-line"></i>
-              <p>Notificação</p>
+            <li
+              class="navbar-item"
+              id="notification"
+              data-page="notifications"
+              aria-label="Notificações"
+            >
+              <button class="tooltip">
+                <i class="ri-notification-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Notificações</span>
+              </button>
             </li>
-            <li id="config">
-              <i class="ri-settings-2-line"></i>
-              <p>Gerenciar Conta</p>
-              <i class="ri-arrow-down-s-line arrow-option"></i>
+            <li
+              class="navbar-item"
+              id="generate"
+              data-page="generate"
+              aria-label="Gerar"
+            >
+              <button class="tooltip">
+                <i class="ri-file-add-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Gerar Solicitação</span>
+              </button>
             </li>
-            <ul id="subMenu">
-              <li>
-                <i class="ri-logout-box-line"></i>
-                <p>Encerrar Sessão</p>
-              </li>
-            </ul>
+            <li class="navbar-subitem">
+              <button class="tooltip">
+                <i class="ri-logout-box-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Sair</span>
+              </button>
+            </li>
           </ul>
         </div>
-      </div>
+      </nav>
 
       <div class="content">
         <section class="listNextAgend">
-          <h1>Agendamentos Aguardando Confirmação</h1>
+          <h1>
+            Agendamentos Aguardando Confirmação <i class="ri-time-line"></i>
+          </h1>
 
           <div class="filters">
             <input
@@ -77,6 +106,38 @@
                 <th>Status</th>
               </thead>
               <tbody>
+                <tr>
+                  <td>#101</td>
+                  <td>Fornecedor ABC</td>
+                  <td>20/12/2024</td>
+                  <td>21/12/2024 - 14:00</td>
+                  <td>500</td>
+                  <td>Solicitação Pendente</td>
+                </tr>
+                <tr>
+                  <td>#101</td>
+                  <td>Fornecedor ABC</td>
+                  <td>20/12/2024</td>
+                  <td>21/12/2024 - 14:00</td>
+                  <td>500</td>
+                  <td>Solicitação Pendente</td>
+                </tr>
+                <tr>
+                  <td>#101</td>
+                  <td>Fornecedor ABC</td>
+                  <td>20/12/2024</td>
+                  <td>21/12/2024 - 14:00</td>
+                  <td>500</td>
+                  <td>Solicitação Pendente</td>
+                </tr>
+                <tr>
+                  <td>#101</td>
+                  <td>Fornecedor ABC</td>
+                  <td>20/12/2024</td>
+                  <td>21/12/2024 - 14:00</td>
+                  <td>500</td>
+                  <td>Solicitação Pendente</td>
+                </tr>
                 <tr>
                   <td>#101</td>
                   <td>Fornecedor ABC</td>

@@ -1,24 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const handlerSidebar = () => {
-    const toggleSubmenu = () => {
-      const submenu = document.querySelector("#subMenu");
-      const arrowOption = document.querySelector(".arrow-option");
-
-      document.querySelector("#config").addEventListener("click", () => {
-        submenu.classList.toggle("toggle");
-        arrowOption.classList.toggle("ri-arrow-up-s-line");
-        arrowOption.classList.toggle("ri-arrow-down-s-line");
-      });
-    };
-
     const showModalExit = () => {
       const modalExit = document.querySelector("#exitSessionModal");
       const btnCancelar = document.getElementById("btnCancelar");
       const btnDeslogin = document.getElementById("btnDeslogin");
 
-      document.getElementById("subMenu").addEventListener("click", () => {
-        modalExit.classList.add("show");
-      });
+      document
+        .querySelector(".navbar-subitem")
+        .addEventListener("click", () => {
+          modalExit.classList.add("show");
+        });
 
       btnCancelar.addEventListener("click", () => {
         modalExit.classList.remove("show");
@@ -31,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    toggleSubmenu();
     showModalExit();
 
     const handlerSibebarNavigation = () => {

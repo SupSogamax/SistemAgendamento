@@ -5,74 +5,65 @@
   margin: 0;
   font-family: "Roboto", sans-serif;
   padding: 0;
+  list-style: none;
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #efefef;
 }
 
-.sidebar {
-  width: 250px;
-  background-color: #1e1f36;
+.navbar {
+  width: 100%;
+  background-color: #000033;
   color: #fff;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 20px;
-}
-
-.sidebar .logo h2 {
-  font-size: 24px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.main-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.main-sidebar ul li {
-  padding: 15px;
-  cursor: pointer;
   display: flex;
-  transition: 0.4s ease;
+  top: 0;
   align-items: center;
+  padding: 24px;
+  gap: 2%;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
-.main-sidebar ul li:hover {
-  background-color: #3b3e66;
-  border-radius: 15px;
+.navbar-items {
+  display: flex;
+  gap: 20px;
 }
 
-.main-sidebar ul li i {
-  margin-right: 10px;
+.navbar-items button {
+  background-color: #54547e;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s ease-in-out; /* Suaviza o hover */
 }
 
-.arrow-option {
-  margin-left: 10px;
+.navbar-items button:hover {
+  cursor: pointer;
+  background-color: #4d4d71;
 }
 
-#subMenu {
-  display: none;
-}
-
-#subMenu li:hover {
-  background-color: #d60001;
-}
-
-#subMenu.toggle {
-  display: block;
+.navbar-items i {
+  font-size: 16px;
 }
 
 .content {
-  margin-left: 270px;
-  padding: 30px;
+  padding: 15px;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .listNotifications {
-  background-color: #1e1f36;
+  background-color: #ffffff;
   padding: 24px;
   color: #fff;
   border-radius: 12px;
@@ -82,7 +73,7 @@ body {
 
 .listNotifications h1 {
   font-size: 20px;
-  color: #fff;
+  color: #000033;
   margin-bottom: 16px;
   font-weight: 700;
   text-align: center;
@@ -95,7 +86,7 @@ body {
   border-collapse: collapse;
   border-radius: 0px 0px 20px 20px;
   border: none;
-  background-color: #2a2b50;
+  background-color: #000033;
 }
 
 .listNotifications thead th {
@@ -201,7 +192,7 @@ body {
 }
 
 .exitSession h1 {
-  background-color: #2f315a;
+  background-color: #000033;
   padding: 20px;
   font-size: 20px;
   font-weight: 500;
@@ -314,4 +305,47 @@ input[type="checkbox"] {
 
 .loading-container p {
   font-size: 24px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  font-size: 14px;
+  width: fit-content;
+  background-color: #ffffff;
+  color: #000033;
+  text-align: center;
+  padding: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }

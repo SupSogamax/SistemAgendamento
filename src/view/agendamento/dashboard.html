@@ -17,51 +17,74 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="sidebar">
-        <div class="logo">
-          <h2>Agendamento</h2>
+      <nav class="navbar">
+        <div class="navbar-logo">
+          <h1>Agendamento</h1>
         </div>
-        <div class="main-sidebar">
-          <ul>
-            <li class="active" data-page="dashboard">
-              <i class="ri-dashboard-line"></i>
-              <p>Dashboard</p>
-            </li>
-            <li data-page="waiting">
-              <i class="ri-hourglass-fill"></i>
-              <p>Aguardando</p>
-            </li>
-            <li class="has-submenu" data-page="completed">
-              <i class="ri-calendar-check-line"></i>
-              <p>Agenda Completa</p>
-            </li>
-            <li id="notification" data-page="notifications">
-              <i class="ri-notification-line"></i>
-              <p>Notificação</p>
-            </li>
-            <li id="generate" data-page="generate">
-              <i class="ri-file-add-line"></i>
-              <p>Gerar Solicitação</p>
-            </li>
+        <div class="navbar-menu">
+          <ul class="navbar-items">
+            <li
+              class="navbar-item active"
+              data-page="dashboard"
+              aria-label="Dashboard"
+            >
+              <button class="tooltip">
+                <i class="ri-dashboard-line" aria-hidden="true"></i>
 
-            <li id="config">
-              <i class="ri-settings-2-line"></i>
-              <p>Gerenciar Conta</p>
-              <i class="ri-arrow-down-s-line arrow-option"></i>
+                <span class="tooltip-text">Dashboard</span>
+              </button>
             </li>
-            <ul id="subMenu">
-              <li>
-                <i class="ri-logout-box-line"></i>
-                <p>Encerrar Sessão</p>
-              </li>
-            </ul>
+            <li class="navbar-item" data-page="waiting" aria-label="Em Espera">
+              <button class="tooltip">
+                <i class="ri-hourglass-fill" aria-hidden="true"></i>
+                <span class="tooltip-text">Em Espera</span>
+              </button>
+            </li>
+            <li
+              class="navbar-item has-submenu"
+              data-page="completed"
+              aria-label="Completados"
+            >
+              <button class="tooltip">
+                <i class="ri-calendar-check-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Completados</span>
+              </button>
+            </li>
+            <li
+              class="navbar-item"
+              id="notification"
+              data-page="notifications"
+              aria-label="Notificações"
+            >
+              <button class="tooltip">
+                <i class="ri-notification-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Notificações</span>
+              </button>
+            </li>
+            <li
+              class="navbar-item"
+              id="generate"
+              data-page="generate"
+              aria-label="Gerar"
+            >
+              <button class="tooltip">
+                <i class="ri-file-add-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Gerar Solicitação</span>
+              </button>
+            </li>
+            <li class="navbar-subitem">
+              <button class="tooltip">
+                <i class="ri-logout-box-line" aria-hidden="true"></i>
+                <span class="tooltip-text">Sair</span>
+              </button>
+            </li>
           </ul>
         </div>
-      </div>
+      </nav>
 
       <div class="content">
         <div class="card-content">
-          <h1>Relatório Mensal</h1>
+          <h1>Relatório Mensal <i class="ri-bar-chart-box-line"></i></h1>
           <section class="cards">
             <article class="card">
               <h2 class="card-title confirm-title">
@@ -100,7 +123,7 @@
         </div>
 
         <section class="listNextAgend">
-          <h1>Próximos Agendamentos</h1>
+          <h1>Próximos Agendamentos <i class="ri-inbox-unarchive-line"></i></h1>
           <table>
             <thead>
               <tr>
