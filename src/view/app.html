@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/app.css" />
+    <title>Tempo Certo</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">Tempo Certo</div>
+
+      <div class="listNavigation">
+        <ul>
+          <li><i class="ri-home-8-line"></i> Início</li>
+          <li><i class="ri-calendar-line"></i> Minha Agenda</li>
+          <li><i class="ri-file-list-2-line"></i> Relatórios</li>
+        </ul>
+      </div>
+
+      <footer>© 2025 Tempo Certo</footer>
+    </div>
+
+    <div class="content">
+      <div class="navbar">
+        <div class="logonav">Tempo Certo</div>
+        <div class="listopcoes">DG</div>
+      </div>
+
+      <div class="welcome">
+        <h1>Olá, <span id="userName">Diego</span></h1>
+        <p>Bem-vindo ao Tempo Certo!</p>
+      </div>
+
+      <div class="create">
+        <p>
+          Para começar a usar o Tempo Certo, clique aqui e <br />
+          agende a sua primeira entrega.
+        </p>
+        <button>Agendar Entrega</button>
+      </div>
+      <section class="support">
+        <div class="support-item">
+          <i class="ri-window-line"></i>
+          <p>
+            <a
+              href="https://sogamax.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Sogamax.com.br</a
+            >
+          </p>
+        </div>
+
+        <div class="support-item">
+          <i class="ri-mail-line"></i>
+          <p>
+            <a href="mailto:suportedev@sogamax.com.br"
+              >suportedev@sogamax.com.br</a
+            >
+          </p>
+        </div>
+
+        <div class="support-item">
+          <i class="ri-phone-line"></i>
+          <p><a href="tel:+5522997833129">22 99783-3129</a></p>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal" id="choose-delivery">
+      <div class="content-modal">
+        <h1>Qual tipo de agenda você deseja marcar?</h1>
+
+        <div class="buttons">
+          <button aria-label="Agendar entrega">
+            <i class="ri-inbox-unarchive-line"></i>
+            <div class="button-text">
+              <h2>Entrega</h2>
+              <p>Quero agendar entrega.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

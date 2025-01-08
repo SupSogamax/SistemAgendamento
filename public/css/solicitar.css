@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Urbanist", serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: #f0f4f8;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3a3d8a;
+  padding: 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-items {
+  display: flex;
+  gap: 50px;
+  margin: auto;
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-item h1 {
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00afba;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+}
+
+.nav-item p {
+  font-size: 16px;
+  color: #d4d2d2;
+  font-weight: 500;
+}
+
+.closed {
+  color: #d4d2d2;
+}
