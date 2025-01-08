@@ -1,40 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const login = () => {
-    const loginBtn = document.querySelector("#login-btn");
-    const usernameField = document.querySelector("#username");
-    const passwordField = document.querySelector("#password");
+  const isValidadeLogin = () => {
+    document.querySelector("#openLogin").addEventListener("click", (event) => {
+      const email = document.querySelector("#emailLogin").value.trim();
+      const password = document.querySelector("#passLogin").value.trim();
 
-    loginBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const user = usernameField.value;
-      const pass = passwordField.value;
-
-      if (user === "Diego" && pass === "2006") {
-        location.href = "/src/view/agendamento/dashboard.html";
+      if (email === "suportedev@sogamax.com.br" && password === "170106") {
+        event.preventDefault();
+        alert("✅ Login realizado com sucesso!");
+        window.location.href = "/src/view/app.html";
       } else {
-        alert("Usuário ou senha incorretos. Tente novamente.");
+        event.preventDefault();
+        alert("❌ Email ou senha incorretos. Tente novamente!");
       }
     });
-
-    const showPass = () => {
-      const passwordField = document.querySelector("#password");
-      const togglePasswordIcon = document.querySelector("#toggle-password");
-
-      togglePasswordIcon.addEventListener("click", () => {
-        if (passwordField.type === "password") {
-          passwordField.type = "text";
-          togglePasswordIcon.classList.remove("ri-eye-off-line");
-          togglePasswordIcon.classList.add("ri-eye-line");
-        } else {
-          passwordField.type = "password";
-          togglePasswordIcon.classList.remove("ri-eye-line");
-          togglePasswordIcon.classList.add("ri-eye-off-line");
-        }
-      });
-    };
-
-    showPass();
   };
-  login();
+  isValidadeLogin();
+
+  const toggleShowPass = () => {
+    const icon = document.querySelector(".toggle");
+    const password = document.querySelector("#passLogin");
+
+    icon.addEventListener("click", () => {
+      if (password.type === "password") {
+        password.type = "text";
+        icon.classList.remove("ri-eye-line");
+        icon.classList.add("ri-eye-off-line");
+      } else {
+        password.type = "password";
+        icon.classList.remove("ri-eye-off-line");
+        icon.classList.add("ri-eye-line");
+      }
+    });
+  };
+
+  toggleShowPass();
 });

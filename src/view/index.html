@@ -1,62 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Sistema de Agendamentos</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.min.css"
-    />
+    <title>Document</title>
     <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="login-container">
-      <div class="login-header">
-        <i class="ri-calendar-check-fill"></i>
-        <h1>Bem-vindo ao Sistema de Agendamentos</h1>
+    <div class="content-Login">
+      <div class="image-logo">
+        <img src="/public/images/logo.png" alt="Logo da Empresa" />
       </div>
-
-      <form id="login-form" class="login-form">
-        <div class="input-group">
-          <label for="username" aria-label="Usuário">
-            <i class="ri-user-line"></i>
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            required
-            placeholder="Digite seu usuário"
-            aria-required="true"
-          />
+      <div class="login">
+        <div class="titleLogin">
+          <h1>Entrar</h1>
         </div>
+        <form>
+          <div class="inputs-login">
+            <div class="email">
+              <label for="emailLogin">E-mail</label>
+              <input
+                type="email"
+                name="emailLogin"
+                id="emailLogin"
+                placeholder="Digite seu e-mail"
+                aria-label="E-mail"
+              />
+            </div>
+            <div class="pass">
+              <label for="passLogin">Senha</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  name="passLogin"
+                  id="passLogin"
+                  placeholder="Digite sua senha"
+                  aria-label="Senha"
+                />
+                <i class="ri-eye-line toggle" id="togglePassword"></i>
+              </div>
+            </div>
+          </div>
+          <button id="openLogin">Entrar</button>
+        </form>
+      </div>
+    </div>
 
-        <div class="input-group">
-          <label for="password" aria-label="Senha">
-            <i class="ri-lock-line"></i>
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            placeholder="Digite sua senha"
-            aria-required="true"
-          />
-          <i
-            class="ri-eye-off-line toggle-password"
-            id="toggle-password"
-            title="Mostrar/ocultar senha"
-          ></i>
-        </div>
-
-        <button type="submit" id="login-btn" class="btn-primary">Entrar</button>
-
-        <div class="links">
-          <a href="#" id="forgot-password">Esqueceu a senha?</a>
-        </div>
-      </form>
+    <div class="content-design">
+      <div class="title-design">
+        <h1>Otimize a gestão do seu espaço com mais eficiência!</h1>
+      </div>
+      <div class="listbox">
+        <ul>
+          <li>
+            <i class="ri-shield-check-line"></i>
+            <p>Rastreabilidade e segurança das informações</p>
+          </li>
+          <li>
+            <i class="ri-settings-3-line"></i>
+            <p>Padronização de processos para mitigar erros</p>
+          </li>
+          <li>
+            <i class="ri-calendar-check-line"></i>
+            <p>Facilidade no Agendamento e Coleta</p>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script src="/public/js/login.js"></script>
