@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   isValidadeLogin();
 
   const toggleShowPass = () => {
-    const icon = document.querySelector(".toggle");
+    const icon = document.querySelector("#togglePassword");
     const password = document.querySelector("#passLogin");
 
     icon.addEventListener("click", () => {

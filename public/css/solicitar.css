@@ -22,27 +22,27 @@ body {
   border-bottom: 2px solid #ddd;
 }
 
-.logo {
+.navbar__logo {
   font-size: 24px;
   font-weight: bold;
   color: #ffffff;
 }
 
-.nav-items {
+.navbar__items {
   display: flex;
   gap: 50px;
   margin: auto;
   justify-content: center;
 }
 
-.nav-item {
+.navbar__item {
   display: flex;
   gap: 10px;
   align-items: center;
   text-align: center;
 }
 
-.nav-item h1 {
+.navbar__item-number {
   font-size: 16px;
   font-weight: bold;
   border-radius: 50%;
@@ -50,19 +50,458 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00afba;
+  background-color: #9ba0a0;
   color: #fff;
   width: 30px;
   height: 30px;
   margin: 10px auto;
 }
 
-.nav-item p {
+.navbar__item-text {
   font-size: 16px;
   color: #d4d2d2;
   font-weight: 500;
 }
 
-.closed {
-  color: #d4d2d2;
+.navbar__close-btn {
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar__close-btn:hover {
+  animation: rotate 0.5s linear forwards;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.content {
+  padding: 40px;
+}
+
+.step__title {
+  font-weight: 600;
+  color: #3a3d8a;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-group--tipo-remetente {
+  width: fit-content;
+  border-radius: 5px;
+  padding: 4px 12px;
+  border: 1px solid rgb(191, 186, 186);
+}
+
+.form-group__label {
+  font-size: 14px;
+}
+
+.form-group__label span {
+  color: red;
+  font-size: 20px;
+}
+
+.form-group__dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+
+.form-group__selected-text {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.form-group--nota-fiscal {
+  margin-top: 30px;
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  font-size: 20px;
+  gap: 10px;
+}
+
+.form-group__radio {
+  width: 20px;
+  height: 20px;
+  color: #3a3d8a;
+}
+
+.form-group__radio-label {
+  font-size: 20px;
+}
+
+.form-group--anexo {
+  margin-top: 30px;
+  border-top: 1px solid rgb(226, 225, 225);
+}
+
+.form-group__upload-area {
+  width: 100%;
+  margin-top: 30px;
+  height: 150px;
+  border: 2px dashed #d0d5ff;
+  border-radius: 8px;
+  background-color: #f7faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #3a3d8a;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-group__upload-area:hover {
+  background-color: #eef3ff;
+  border-color: #a5b1ff;
+}
+
+.form-group__file-input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.form-group__descricao {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.form-group__input-wrapper {
+  width: 900px;
+}
+
+.form-group__input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group__input::placeholder {
+  color: #00a4b8;
+  font-style: italic;
+}
+
+.form-group__input:focus {
+  border-color: #00a4b8;
+  box-shadow: 0 0 5px rgba(0, 164, 184, 0.2);
+}
+
+.form-group__btn {
+  height: 50px;
+  width: 150px;
+  padding: 0 20px;
+  border: 1px solid #00a4b8;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: #00a4b8;
+  font-size: 16px;
+  float: right;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-group__btn:hover {
+  background-color: #00a4b8;
+  color: #ffffff;
+}
+
+.step--2 {
+}
+
+#nota-fiscal-info {
+  padding: 30px;
+
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Urbanist", sans-serif;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+#nota-fiscal-info h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #3a3d8a;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d0d5ff;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#nota-fiscal-info p {
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
+}
+
+#nota-fiscal-info p strong {
+  font-weight: bold;
+  color: #3a3d8a;
+}
+
+#nota-fiscal-info p span {
+  color: #6b6b6b;
+  font-style: italic;
+}
+
+#nota-fiscal-info .info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+#nota-fiscal-info .info-item:last-child {
+  border-bottom: none;
+}
+
+#nota-fiscal-info .info-item-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a3d8a;
+}
+
+#nota-fiscal-info .info-item-value {
+  font-size: 16px;
+  color: #333;
+  font-weight: 400;
+}
+
+#nota-fiscal-info ul {
+  list-style: none;
+  margin: 10px 0;
+  padding-left: 0;
+}
+
+#nota-fiscal-info ul li {
+  font-size: 16px;
+  color: #333;
+  padding: 5px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+#nota-fiscal-info ul li:last-child {
+  border-bottom: none;
+}
+
+#nota-fiscal-info .products-list {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  #nota-fiscal-info {
+    padding: 20px;
+  }
+
+  #nota-fiscal-info h2 {
+    font-size: 20px;
+  }
+
+  #nota-fiscal-info p,
+  #nota-fiscal-info ul li {
+    font-size: 14px;
+  }
+}
+
+.step {
+  display: none;
+}
+
+.step--active {
+  display: block;
+}
+
+.form-group--next-step button {
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.navbar__item-active {
+  background: linear-gradient(135deg, #0074d9, #005bb5);
+  color: #ffffff;
+}
+
+.navbar__item-complete {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: #ffffff;
+}
+.input-icon {
+  position: relative;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input[type="date"]:hover,
+select:hover {
+  border-color: #007bff;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.input-icon::before {
+  content: attr(data-icon);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+}
+
+.agendamento-info label {
+  margin-bottom: 15px;
+}
+
+.form-group__btn {
+  margin-top: 20px;
+}
+
+#success-message {
+  width: 100%;
+  height: 100%;
+  background-color: #3a3d8a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+  color: #fff;
+  padding: 20px;
+  gap: 4%;
+  box-sizing: border-box;
+  animation: fadeIn 0.8s ease;
+}
+
+#success-message h1 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.8s ease forwards 0.2s;
+}
+
+#success-message button {
+  background-color: #ffffff;
+  color: #28a745;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: popIn 0.8s ease forwards 0.4s;
+}
+
+#success-message button:hover {
+  background-color: #e9ecef;
+  transform: scale(1.05);
+}
+
+#success-message button:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+#success-message img {
+  height: auto;
+  opacity: 0;
+  width: 700px;
+  transform: scale(0.8);
+  animation: popIn 0.8s ease forwards 0.6s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

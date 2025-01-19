@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/agenda.css" />
+    <title>Tempo Certo Sogamax</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">Tempo Certo Sogamax</div>
+
+      <div class="listNavigation">
+        <ul>
+          <li><i class="ri-home-8-line"></i> Início</li>
+          <li><i class="ri-calendar-line"></i> Minha Agenda</li>
+          <li><i class="ri-file-list-2-line"></i> Relatórios</li>
+        </ul>
+      </div>
+
+      <footer>© 2025 Tempo Certo</footer>
+    </div>
+
+    <div class="content">
+      <div class="navbar">
+        <div class="logonav">Tempo Certo Sogamax</div>
+        <div class="listopcoes">
+          <div class="help">?</div>
+          <div class="profile">
+            <h1 id="profile"></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome">
+        <h1>Olá, <span id="userName">Diego</span></h1>
+        <p>Acompanhe sua agenda e mantenha seus compromissos organizados</p>
+      </div>
+
+      <div class="create">
+        <div class="calendar" id="calendar">
+          <div class="filters" id="filters">
+            <div class="filter">
+              <label for="filter-date">Data:</label>
+              <input type="date" id="filter-date" />
+            </div>
+
+            <div class="filter">
+              <label for="filter-status">Status:</label>
+              <select id="filter-status">
+                <option value="">Todos</option>
+                <option value="confirmado">Confirmado</option>
+                <option value="pendente">Pendente</option>
+                <option value="cancelado">Cancelado</option>
+              </select>
+            </div>
+
+            <div class="filter">
+              <label for="filter-time">Hora:</label>
+              <select id="filter-time">
+                <option value="">Todos</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+              </select>
+            </div>
+
+            <button id="apply-filters">Aplicar Filtros</button>
+          </div>
+
+          <div class="agendamentos-container" id="agendamentos-container"></div>
+
+          <div id="pagination"></div>
+        </div>
+      </div>
+
+      <section class="support">
+        <div class="support-item">
+          <i class="ri-window-line"></i>
+          <p>
+            <a
+              href="https://sogamax.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Sogamax.com.br</a
+            >
+          </p>
+        </div>
+
+        <div class="support-item">
+          <i class="ri-mail-line"></i>
+          <p>
+            <a href="mailto:suportedev@sogamax.com.br"
+              >suportedev@sogamax.com.br</a
+            >
+          </p>
+        </div>
+
+        <div class="support-item">
+          <i class="ri-phone-line"></i>
+          <p><a href="tel:+5522997833129">22 99783-3129</a></p>
+        </div>
+      </section>
+    </div>
+
+    <div id="agendamentoModal">
+      <div class="modal-content">
+        <div class="header-agendamento">
+          <h2 id="modalTipo">Detalhes do Agendamento</h2>
+        </div>
+
+        <div class="details-section">
+          <h3>Remetente</h3>
+          <p><strong>Nome:</strong> <span id="remetenteNome"></span></p>
+          <p><strong>CNPJ:</strong> <span id="remetenteCnpj"></span></p>
+          <p><strong>Endereço:</strong> <span id="remetenteEndereco"></span></p>
+        </div>
+
+        <div class="details-section">
+          <h3>Destinatário</h3>
+          <p><strong>Nome:</strong> <span id="destinatarioNome"></span></p>
+          <p><strong>CNPJ:</strong> <span id="destinatarioCnpj"></span></p>
+          <p>
+            <strong>Endereço:</strong> <span id="destinatarioEndereco"></span>
+          </p>
+        </div>
+
+        <div class="modal-actions">
+          <button id="confirmarBtn">Confirmar</button>
+          <button id="remarcarBtn">Remarcar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/public/js/agenda.js"></script>
+  </body>
+</html>

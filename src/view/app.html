@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/app.css" />
-    <title>Tempo Certo</title>
+    <title>Tempo Certo Sogamax</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
@@ -13,12 +13,12 @@
   </head>
   <body>
     <div class="sidebar">
-      <div class="logo">Tempo Certo</div>
+      <div class="logo">Tempo Certo Sogamax</div>
 
       <div class="listNavigation">
         <ul>
           <li><i class="ri-home-8-line"></i> Início</li>
-          <li><i class="ri-calendar-line"></i> Minha Agenda</li>
+          <li id="agenda"><i class="ri-calendar-line"></i> Minha Agenda</li>
           <li><i class="ri-file-list-2-line"></i> Relatórios</li>
         </ul>
       </div>
@@ -28,8 +28,13 @@
 
     <div class="content">
       <div class="navbar">
-        <div class="logonav">Tempo Certo</div>
-        <div class="listopcoes">DG</div>
+        <div class="logonav">Tempo Certo Sogamax</div>
+        <div class="listopcoes">
+          <div class="help">?</div>
+          <div class="profile">
+            <h1 id="profile"></h1>
+          </div>
+        </div>
       </div>
 
       <div class="welcome">
@@ -40,9 +45,9 @@
       <div class="create">
         <p>
           Para começar a usar o Tempo Certo, clique aqui e <br />
-          agende a sua primeira entrega.
+          agende a sua entrega.
         </p>
-        <button>Agendar Entrega</button>
+        <button id="buttonNewAgenda">Agendar Entrega</button>
       </div>
       <section class="support">
         <div class="support-item">
@@ -75,8 +80,10 @@
 
     <div class="modal" id="choose-delivery">
       <div class="content-modal">
-        <h1>Qual tipo de agenda você deseja marcar?</h1>
-
+        <div class="title-modal">
+          <h1>Qual tipo de agenda você deseja marcar?</h1>
+          <i id="closedModal" class="ri-close-line"></i>
+        </div>
         <div class="buttons">
           <button aria-label="Agendar entrega">
             <i class="ri-inbox-unarchive-line"></i>
@@ -88,5 +95,6 @@
         </div>
       </div>
     </div>
+    <script src="/public/js/app.js"></script>
   </body>
 </html>

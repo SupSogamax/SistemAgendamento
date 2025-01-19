@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/solicitar.css" />
-    <title>Document</title>
+    <title>Tempo Certo - Solicitar</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -12,28 +12,167 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo">Tempo Certo</div>
-
-      <div class="nav-items">
-        <div class="nav-item">
-          <h1>1</h1>
-          <p>Nota Fiscais</p>
+      <div class="navbar__logo">Tempo Certo</div>
+      <div class="navbar__items">
+        <div class="navbar__item">
+          <h1 class="navbar__item-number">1</h1>
+          <p class="navbar__item-text">Nota Fiscais</p>
         </div>
-        <div class="nav-item">
-          <h1>2</h1>
-          <p>Pedidos</p>
+        <div class="navbar__item">
+          <h1 class="navbar__item-number">2</h1>
+          <p class="navbar__item-text">Pedidos</p>
         </div>
-        <div class="nav-item">
-          <h1>3</h1>
-          <p>Documentos</p>
-        </div>
-        <div class="nav-item">
-          <h1>4</h1>
-          <p>Agendamento</p>
+        <div class="navbar__item">
+          <h1 class="navbar__item-number">3</h1>
+          <p class="navbar__item-text">Agendamento</p>
         </div>
       </div>
-
-      <div class="closed"><i class="ri-close-line"></i></div>
+      <div class="navbar__close-btn">
+        <i class="ri-close-line"></i>
+      </div>
     </nav>
+
+    <main class="content">
+      <section class="step step--1 step--active">
+        <h1 class="step__title">Minha Agenda</h1>
+
+        <div class="form-group form-group--tipo-remetente">
+          <label for="tipoRemetente" class="form-group__label">
+            Tipo de Remetente <span>*</span>
+          </label>
+          <div class="form-group__dropdown">
+            <p class="form-group__selected-text">Transportadora</p>
+            <i class="ri-arrow-left-s-fill"></i>
+          </div>
+        </div>
+
+        <div class="form-group form-group--anexo">
+          <div class="form-group__upload-area" id="uploadArea">
+            <input
+              type="file"
+              name="anexoNota"
+              id="anexoNota"
+              class="form-group__file-input"
+              accept=".xml"
+            />
+            <p class="form-group__upload-text">
+              Clique ou arraste e solte os<br />
+              os XML da nota fiscal 📄
+            </p>
+          </div>
+
+          <div
+            class="form-group form-group--confirmado"
+            id="notaConfirmada"
+            style="display: none"
+          >
+            <p class="form-group-success">
+              ✅ Nota fiscal anexada com sucesso!
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group form-group--next-step">
+          <button class="form-group__btn" id="btnAvancar" disabled>
+            Avançar
+          </button>
+        </div>
+      </section>
+
+      <section class="step step--2">
+        <h1 class="step__title">Verificação da Nota Fiscal</h1>
+
+        <div id="nota-fiscal-info">
+          <h2>Emitente</h2>
+          <p id="emitente-nome">
+            Nome: <span id="emitente-nome-text">Não informado</span>
+          </p>
+          <p id="emitente-cnpj">
+            CNPJ: <span id="emitente-cnpj-text">Não informado</span>
+          </p>
+          <p id="emitente-endereco">
+            Endereço: <span id="emitente-endereco-text">Não informado</span>
+          </p>
+
+          <h2>Destinatário</h2>
+          <p id="destinatario-nome">
+            Nome: <span id="destinatario-nome-text">Não informado</span>
+          </p>
+          <p id="destinatario-cnpj">
+            CNPJ: <span id="destinatario-cnpj-text">Não informado</span>
+          </p>
+          <p id="destinatario-endereco">
+            Endereço: <span id="destinatario-endereco-text">Não informado</span>
+          </p>
+
+          <h2>Produtos</h2>
+          <ul id="produtos-list"></ul>
+        </div>
+        <div class="form-group form-group--next-step">
+          <button class="form-group__btn" id="btnAvancar2">Avançar</button>
+          <button class="form-group__btn" id="btnVoltar2">Voltar</button>
+        </div>
+      </section>
+
+      <section class="step step--3">
+        <h1 class="step__title">Marcar Agendamento</h1>
+
+        <div id="agendamento-info">
+          <h2>Defina a data e hora do agendamento</h2>
+
+          <div class="form-group form-group--data">
+            <label for="agendamento-data">📅 Data:</label>
+            <input type="date" id="agendamento-data" required />
+          </div>
+
+          <div class="form-group form-group--hora">
+            <label for="agendamento-hora">⏰ Hora:</label>
+            <select id="agendamento-hora" required>
+              <option value="" disabled selected>Selecione um horário</option>
+              <option value="09:00">08:00</option>
+              <option value="09:30">08:30</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="12:00">12:00</option>
+              <option value="12:30">12:30</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="09:00">17:30</option>
+              <option value="09:30">18:00</option>
+            </select>
+          </div>
+
+          <button id="confirmarAgendamento" class="form-group__btn">
+            Confirmar Agendamento
+          </button>
+        </div>
+      </section>
+
+      <section id="success-message">
+        <div class="messege">
+          <h1>✅ Seu agendamento foi registrado com sucesso!</h1>
+
+          <button onclick="window.location.href='/src/view/app.html'">
+            Voltar à Página Inicial
+          </button>
+        </div>
+        <div class="box">
+          <img src="/public/image/box-trasparente.png" alt="Pacote-Entrega" />
+        </div>
+      </section>
+    </main>
+
+    <script src="/public/js/solicitar.js"></script>
   </body>
 </html>
