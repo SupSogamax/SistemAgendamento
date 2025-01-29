@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/agenda.css" />
-    <title>Tempo Certo Sogamax</title>
+    <link
+      rel="shortcut icon"
+      href="/public/image/favicon.png"
+      type="image/x-icon"
+    />
+    <title>EntregaHub. - Agenda</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
@@ -12,33 +17,48 @@
     />
   </head>
   <body>
+    <div class="loading">
+      <div class="content-loading">
+        <h1>Carregando...</h1>
+      </div>
+    </div>
+
     <div class="sidebar">
-      <div class="logo">Tempo Certo Sogamax</div>
+      <div class="logo">
+        <h1>Entrega<span>Hub.</span></h1>
+      </div>
 
       <div class="listNavigation">
         <ul>
-          <li><i class="ri-home-8-line"></i> Início</li>
-          <li><i class="ri-calendar-line"></i> Minha Agenda</li>
-          <li><i class="ri-file-list-2-line"></i> Relatórios</li>
+          <li><i class="ri-home-4-line"></i> Início</li>
+          <li id="agenda">
+            <i class="ri-calendar-check-line"></i> Minha Agenda
+          </li>
+          <li><i class="ri-file-text-line"></i> Relatórios</li>
+          <li><i class="ri-inbox-unarchive-line"></i> Entregas hoje</li>
         </ul>
       </div>
 
-      <footer>© 2025 Tempo Certo</footer>
+      <footer>© 2025 EntregaHub.</footer>
     </div>
 
     <div class="content">
       <div class="navbar">
-        <div class="logonav">Tempo Certo Sogamax</div>
         <div class="listopcoes">
-          <div class="help">?</div>
-          <div class="profile">
-            <h1 id="profile"></h1>
+          <div class="text">
+            <p></p>
+          </div>
+          <div class="menu">
+            <div class="help"><i class="ri-questionnaire-line"></i></div>
+            <div class="profile">
+              <h1 id="profile"></h1>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="welcome">
-        <h1>Olá, <span id="userName">Diego</span></h1>
+        <h1 style="display: none">Olá, <span id="userName">Diego</span></h1>
         <p>Acompanhe sua agenda e mantenha seus compromissos organizados</p>
       </div>
 
@@ -56,7 +76,7 @@
                 <option value="">Todos</option>
                 <option value="confirmado">Confirmado</option>
                 <option value="pendente">Pendente</option>
-                <option value="cancelado">Cancelado</option>
+                <option value="remarcado">Remarcado</option>
               </select>
             </div>
 
@@ -87,23 +107,14 @@
               href="https://sogamax.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              >Sogamax.com.br</a
-            >
-          </p>
-        </div>
-
-        <div class="support-item">
-          <i class="ri-mail-line"></i>
-          <p>
-            <a href="mailto:suportedev@sogamax.com.br"
-              >suportedev@sogamax.com.br</a
+              >sogamax.com.br</a
             >
           </p>
         </div>
 
         <div class="support-item">
           <i class="ri-phone-line"></i>
-          <p><a href="tel:+5522997833129">22 99783-3129</a></p>
+          <p><a href="tel:+5522992156739">22 99215-6739</a></p>
         </div>
       </section>
     </div>
@@ -137,6 +148,18 @@
       </div>
     </div>
 
-    <script src="/public/js/agenda.js"></script>
+    <div id="exit-profile">
+      <div class="content-modal">
+        <div class="title-modal">
+          <h1>Tem certeza de que deseja desconectar da sua sessão?</h1>
+        </div>
+        <div class="buttons-exit">
+          <button id="cancel">Cancelar</button>
+          <button id="disconnect">Desconectar</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/public/js/agenda.js"></script>
   </body>
 </html>

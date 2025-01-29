@@ -1,32 +1,10 @@
+import navbar from "/public/js/export/navBar.js";
+import sidebar from "/public/js/export/sideBar.js";
+import sessionModal from "/public/js/export/sessionModal.js";
+import randomFrase from "./export/radomFrases.js";
+import tela from "./export/telaCarregamento.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = () => {
-    const sigleName = () => {
-      const nameUser = document.querySelector("#userName").textContent.trim();
-      const profile = document.querySelector("#profile");
-
-      if (nameUser.length >= 2) {
-        const initials = nameUser[0].toUpperCase() + nameUser[1].toUpperCase();
-        profile.textContent = initials;
-      }
-    };
-
-    sigleName();
-  };
-
-  navbar();
-
-  const sidebar = () => {
-    const redirect = () => {
-      const minhaAgenda = document
-        .querySelector("#agenda")
-        .addEventListener("click", () => {
-          window.location.href = "/src/view/agenda.html";
-        });
-    };
-    redirect();
-  };
-  sidebar();
-
   const newAgenda = () => {
     const buttonNewAgenda = document.querySelector("#buttonNewAgenda");
     const modalEntrega = document.querySelector("#choose-delivery");

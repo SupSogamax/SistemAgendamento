@@ -1,57 +1,44 @@
+import navbar from "/public/js/export/navBar.js";
+import sidebar from "/public/js/export/sideBar.js";
+import sessionModal from "/public/js/export/sessionModal.js";
+import randomFrase from "./export/radomFrases.js";
+import tela from "./export/telaCarregamento.js";
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializa o nome do usuário no perfil
-  const initializeNavbar = () => {
-    const nameUser = document.querySelector("#userName")?.textContent?.trim();
-    const profile = document.querySelector("#profile");
-
-    if (nameUser && nameUser.length >= 2) {
-      const initials = nameUser[0].toUpperCase() + nameUser[1].toUpperCase();
-      profile.textContent = initials;
-    }
-  };
-
-  initializeNavbar();
-
-  const redirectPages = () => {
-    const itensNav = document.querySelectorAll(".listNavigation li");
-
-    itensNav.forEach((item) => {
-      item.addEventListener("click", () => {
-        if (item.innerHTML.includes("Início")) {
-          window.location.href = "/src/view/app.html";
-        } else if (item.innerHTML.includes("Minha Agenda")) {
-          window.location.href = "/src/view/agenda.html";
-        } else if (item.innerHTML.includes("Relatórios")) {
-          window.location.href = "/src/view/relatorios.html";
-        }
-      });
-    });
-  };
-
-  redirectPages();
-
-  // Agendamentos de exemplo
   const agendamentos = [
     {
       tipo: "Consulta",
       data: "2025-01-02",
       hora: "14:00",
       status: "Confirmado",
+      local: "Colatina",
     },
-    { tipo: "Reunião", data: "2025-01-03", hora: "11:00", status: "Cancelado" },
-    { tipo: "Entrega", data: "2025-01-04", hora: "10:00", status: "Pendente" },
+    {
+      tipo: "Reunião",
+      data: "2025-01-03",
+      hora: "11:00",
+      status: "Remarcado",
+      local: "Cardoso Moreira",
+    },
+    {
+      tipo: "Entrega",
+      data: "2025-01-04",
+      hora: "10:00",
+      status: "Pendente",
+      local: "Cardoso Moreira",
+    },
     {
       tipo: "Novo Agendamento",
       data: "2025-01-01",
       hora: "09:00",
-      status: "Confirmado",
+      status: "Remarcado",
+      local: "Cardoso Moreira",
     },
   ];
 
   const itemsPerPage = 3;
   let currentPage = 1;
 
-  // Função para formatar hora
   const formatTime = (time) => {
     const [hour, minute] = time.split(":").map((v) => parseInt(v, 10));
     let ampm = hour >= 12 ? "PM" : "AM";
@@ -60,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${hour12}:${minute < 10 ? "0" + minute : minute} ${ampm}`;
   };
 
-  // Função para formatar data
   const formatDate = (date) => {
     const dateObj = new Date(date);
     const dayOfWeek = [
@@ -91,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${dayOfWeek}, ${day} de ${month} de ${year}`;
   };
 
-  // Função para renderizar os agendamentos
   const renderAgendamentos = (agendamentosFiltrados) => {
     const container = document.getElementById("agendamentos-container");
     container.innerHTML = "";
@@ -111,10 +96,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const statusClass = item.status.toLowerCase();
       const formattedTime = formatTime(item.hora);
       const formattedDate = formatDate(item.data);
+      const local = item.local || "Local não especificado";
 
       agendamentoElement.innerHTML = `
         <div class="agendamento-info">
-          <h3>${item.tipo}</h3>
+          <h3>Agendamento</h3>
+          <p><strong>Local:</strong> ${local}</p>
           <p><strong>Data:</strong> ${formattedDate}</p>
           <p><strong>Hora:</strong> ${formattedTime}</p>
           <p><strong>Status:</strong> <span class="${statusClass}">${
@@ -132,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPagination(agendamentosFiltrados.length);
   };
 
-  // Função para renderizar a paginação
   const renderPagination = (totalItems) => {
     const paginationContainer = document.getElementById("pagination");
     paginationContainer.innerHTML = "";
@@ -174,34 +160,50 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   };
 
-  // Função para normalizar a data para comparação
   const formatDateForComparison = (date) => {
     const [year, month, day] = date.split("-");
     return new Date(Date.UTC(year, month - 1, day)).toISOString().split("T")[0];
   };
 
-  // Função para aplicar filtros
+  // Função para configurar a data atual no input e aplicar o filtro automaticamente
+  const initializeFilters = () => {
+    // Obter a data atual no formato "YYYY-MM-DD"
+    const hoje = new Date().toISOString().split("T")[0];
+
+    // Preencher o input de data com a data atual
+    const dateInput = document.getElementById("filter-date");
+    if (dateInput) {
+      dateInput.value = hoje;
+    }
+
+    // Aplicar os filtros automaticamente com a data de hoje
+    applyFilters(); // Aplica o filtro ao carregar a página
+  };
+
+  // Função para aplicar os filtros
   const applyFilters = () => {
-    const filterDate = document.getElementById("filter-date")?.value;
+    const filterDate = document.getElementById("filter-date")?.value; // Vai pegar a data atual ou a selecionada
     const filterStatus = document.getElementById("filter-status")?.value;
     const filterTime = document.getElementById("filter-time")?.value;
 
-    let filtered = [...agendamentos];
+    let filtered = [...agendamentos]; // Isso deve ser substituído pela sua lista de agendamentos reais
 
+    // Filtro por data
     if (filterDate) {
       filtered = filtered.filter((item) => {
         const itemDate = new Date(item.data).toISOString().split("T")[0];
-        const selectedDate = new Date(filterDate).toISOString().split("T")[0];
-        return itemDate === selectedDate;
+        return itemDate === filterDate;
       });
     }
 
+    // Filtro por status
     if (filterStatus) {
       filtered = filtered.filter(
         (item) => item.status.toLowerCase() === filterStatus.toLowerCase()
       );
     }
 
+    // Filtro por horário
     if (filterTime) {
       const timeRanges = {
         manha: [6, 12],
@@ -218,10 +220,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Exibir os resultados filtrados (você pode substituir isso com sua lógica de exibição)
+    console.log(filtered); // Mostra no console os itens filtrados
     return filtered;
   };
 
-  // Evento de filtro
+  // Inicializar os filtros ao carregar a página
+  window.onload = initializeFilters;
+
+  // Evento para aplicar filtro manualmente quando o botão for clicado
+  document
+    .getElementById("apply-filters")
+    ?.addEventListener("click", applyFilters);
+
   document.getElementById("apply-filters")?.addEventListener("click", () => {
     currentPage = 1;
     renderAgendamentos(applyFilters());

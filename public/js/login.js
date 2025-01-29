@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (email === "suportedev@sogamax.com.br" && password === "170106") {
         event.preventDefault();
-        alert("✅ Login realizado com sucesso!");
         window.location.href = "/src/view/app.html";
       } else {
         event.preventDefault();

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -17,15 +17,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #3a3d8a;
+  background-color: #09356c;
   padding: 20px;
   border-bottom: 2px solid #ddd;
 }
 
-.navbar__logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
+.navbar__logo h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-family: "Poetsen One", serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.navbar__logo span {
+  color: #00afba;
+  font-size: 1.5rem;
+  font-family: "Poetsen One", serif;
+  font-weight: 800;
 }
 
 .navbar__items {
@@ -96,7 +105,7 @@ body {
 
 .step__title {
   font-weight: 600;
-  color: #3a3d8a;
+  color: #09356c;
   font-size: 24px;
 }
 
@@ -146,7 +155,7 @@ body {
 .form-group__radio {
   width: 20px;
   height: 20px;
-  color: #3a3d8a;
+  color: #09356c;
 }
 
 .form-group__radio-label {
@@ -162,14 +171,14 @@ body {
   width: 100%;
   margin-top: 30px;
   height: 150px;
-  border: 2px dashed #d0d5ff;
+  border: 2px dashed #00afba;
   border-radius: 8px;
   background-color: #f7faff;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #3a3d8a;
+  color: #09356c;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -178,8 +187,8 @@ body {
 }
 
 .form-group__upload-area:hover {
-  background-color: #eef3ff;
-  border-color: #a5b1ff;
+  background-color: #d9dce2;
+  border-color: #65dbe3;
 }
 
 .form-group__file-input {
@@ -226,9 +235,7 @@ body {
 }
 
 .form-group__btn {
-  height: 50px;
-  width: 150px;
-  padding: 0 20px;
+  padding: 8px 12px;
   border: 1px solid #00a4b8;
   border-radius: 25px;
   background-color: #ffffff;
@@ -245,16 +252,12 @@ body {
   color: #ffffff;
 }
 
-.step--2 {
-}
-
 #nota-fiscal-info {
   padding: 30px;
 
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-family: "Urbanist", sans-serif;
   max-width: 900px;
   margin: 20px auto;
 }
@@ -262,7 +265,7 @@ body {
 #nota-fiscal-info h2 {
   font-size: 22px;
   font-weight: 600;
-  color: #3a3d8a;
+  color: #09356c;
   margin-bottom: 15px;
   border-bottom: 2px solid #d0d5ff;
   padding-bottom: 10px;
@@ -277,7 +280,7 @@ body {
 
 #nota-fiscal-info p strong {
   font-weight: bold;
-  color: #3a3d8a;
+  color: #09356c;
 }
 
 #nota-fiscal-info p span {
@@ -301,7 +304,7 @@ body {
 #nota-fiscal-info .info-item-label {
   font-size: 16px;
   font-weight: 600;
-  color: #3a3d8a;
+  color: #09356c;
 }
 
 #nota-fiscal-info .info-item-value {
@@ -416,7 +419,7 @@ select:focus {
 #success-message {
   width: 100%;
   height: 100%;
-  background-color: #3a3d8a;
+  background-color: #09356c;
   position: fixed;
   top: 0;
   left: 0;
@@ -443,8 +446,8 @@ select:focus {
 }
 
 #success-message button {
-  background-color: #ffffff;
-  color: #28a745;
+  background-color: #00afba;
+  color: #fff;
   border: none;
   padding: 14px 28px;
   border-radius: 8px;
@@ -458,7 +461,7 @@ select:focus {
 }
 
 #success-message button:hover {
-  background-color: #e9ecef;
+  background-color: #078891;
   transform: scale(1.05);
 }
 
@@ -504,4 +507,93 @@ select:focus {
     opacity: 1;
     transform: scale(1);
   }
+}
+/* Estilo para os detalhes do XML */
+#notaFiscalDetalhes {
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  line-height: 1.8;
+  font-family: "Arial", sans-serif;
+}
+
+#notaFiscalDetalhes h2 {
+  text-align: center;
+  color: #09356c;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#notaFiscalDetalhes h3 {
+  color: #00afba;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-left: 4px solid #00afba;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#notaFiscalDetalhes p {
+  color: #333;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+#notaFiscalDetalhes strong {
+  color: #09356c;
+  font-weight: 600;
+}
+
+#notaFiscalDetalhes ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#notaFiscalDetalhes ul li {
+  background: #f7fcff;
+  margin: 12px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#notaFiscalDetalhes ul li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#notaFiscalDetalhes ul li strong {
+  color: #00afba;
+  font-weight: 600;
+}
+
+#notaFiscalDetalhes ul li:before {
+  content: "📦";
+  font-size: 20px;
+  color: #007bff;
+}
+
+#notaFiscalDetalhes hr {
+  border: 0;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 20px 0;
+}
+
+.form-group-success {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 }

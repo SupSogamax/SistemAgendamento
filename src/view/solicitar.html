@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/solicitar.css" />
-    <title>Tempo Certo - Solicitar</title>
+    <link
+      rel="shortcut icon"
+      href="/public/image/favicon.png"
+      type="image/x-icon"
+    />
+    <title>EntregaHub.</title>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -12,7 +17,9 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="navbar__logo">Tempo Certo</div>
+      <div class="navbar__logo">
+        <h1>Entrega<span>Hub.</span></h1>
+      </div>
       <div class="navbar__items">
         <div class="navbar__item">
           <h1 class="navbar__item-number">1</h1>
@@ -66,9 +73,7 @@
             id="notaConfirmada"
             style="display: none"
           >
-            <p class="form-group-success">
-              ✅ Nota fiscal anexada com sucesso!
-            </p>
+            <p class="form-group-success">✅ XML anexada com sucesso!</p>
           </div>
         </div>
 
@@ -80,34 +85,8 @@
       </section>
 
       <section class="step step--2">
-        <h1 class="step__title">Verificação da Nota Fiscal</h1>
+        <div id="notaFiscalDetalhes"></div>
 
-        <div id="nota-fiscal-info">
-          <h2>Emitente</h2>
-          <p id="emitente-nome">
-            Nome: <span id="emitente-nome-text">Não informado</span>
-          </p>
-          <p id="emitente-cnpj">
-            CNPJ: <span id="emitente-cnpj-text">Não informado</span>
-          </p>
-          <p id="emitente-endereco">
-            Endereço: <span id="emitente-endereco-text">Não informado</span>
-          </p>
-
-          <h2>Destinatário</h2>
-          <p id="destinatario-nome">
-            Nome: <span id="destinatario-nome-text">Não informado</span>
-          </p>
-          <p id="destinatario-cnpj">
-            CNPJ: <span id="destinatario-cnpj-text">Não informado</span>
-          </p>
-          <p id="destinatario-endereco">
-            Endereço: <span id="destinatario-endereco-text">Não informado</span>
-          </p>
-
-          <h2>Produtos</h2>
-          <ul id="produtos-list"></ul>
-        </div>
         <div class="form-group form-group--next-step">
           <button class="form-group__btn" id="btnAvancar2">Avançar</button>
           <button class="form-group__btn" id="btnVoltar2">Voltar</button>
@@ -161,10 +140,13 @@
 
       <section id="success-message">
         <div class="messege">
-          <h1>✅ Seu agendamento foi registrado com sucesso!</h1>
+          <h1>
+            Seu agendamento foi <br />
+            registrado com sucesso!
+          </h1>
 
           <button onclick="window.location.href='/src/view/app.html'">
-            Voltar à Página Inicial
+            Retornar à Agenda
           </button>
         </div>
         <div class="box">
