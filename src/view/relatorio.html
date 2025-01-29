@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/relatorio.css" />
+    <link
+      rel="shortcut icon"
+      href="/public/image/favicon.png"
+      type="image/x-icon"
+    />
+    <title>EntregaHub. - Relatórios</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="loading">
+      <div class="content-loading">
+        <h1>Carregando...</h1>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="logo">
+        <h1>Entrega<span>Hub.</span></h1>
+      </div>
+
+      <div class="listNavigation">
+        <ul>
+          <li><i class="ri-home-4-line"></i> Início</li>
+          <li id="agenda">
+            <i class="ri-calendar-check-line"></i> Minha Agenda
+          </li>
+          <li><i class="ri-file-text-line"></i> Relatórios</li>
+          <li><i class="ri-inbox-unarchive-line"></i> Entregas hoje</li>
+        </ul>
+      </div>
+
+      <footer>© 2025 EntregaHub.</footer>
+    </div>
+
+    <div class="content">
+      <div class="navbar">
+        <div class="listopcoes">
+          <div class="text">
+            <p></p>
+          </div>
+          <div class="menu">
+            <div class="help"><i class="ri-questionnaire-line"></i></div>
+            <div class="profile">
+              <h1 id="profile"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="welcome">
+        <h1 style="display: none">Olá, <span id="userName">Diego</span></h1>
+        <p>Crie e acompanhe seus relatórios de maneira prática e organizada</p>
+      </div>
+
+      <div class="create">
+        <div class="filter-section">
+          <label for="data-inicial">Data Inicial e Final</label>
+          <div class="date-range">
+            <input type="date" id="data-inicial" />
+            <input type="date" id="data-final" />
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label for="periodo">Período</label>
+          <select id="periodo">
+            <option value="todosPeriodo" selected>Todos</option>
+            <option value="manhaPeriodo">Manhã</option>
+            <option value="tardePeriodo">Tarde</option>
+            <option value="noitePeriodo">Noite</option>
+          </select>
+        </div>
+
+        <div class="filter-section">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="todosStatus" selected>Todos</option>
+            <option value="pendenteStatus">Pendente</option>
+            <option value="confirmadoStatus">Confirmado</option>
+            <option value="remarcadoStatus">Remarcado</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="gerar-relatorio">Gerar Relatório</button>
+        </div>
+      </div>
+      <section class="support">
+        <div class="support-item">
+          <i class="ri-window-line"></i>
+          <p>
+            <a
+              href="https://sogamax.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              >sogamax.com.br</a
+            >
+          </p>
+        </div>
+
+        <div class="support-item">
+          <i class="ri-phone-line"></i>
+          <p><a href="tel:+5522992156739">22 99215-6739</a></p>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal" id="choose-delivery">
+      <div class="content-modal">
+        <div class="title-modal">
+          <h1>Qual tipo de agenda você deseja marcar?</h1>
+          <i id="closedModal" class="ri-close-line"></i>
+        </div>
+        <div class="buttons">
+          <button aria-label="Agendar entrega">
+            <i class="ri-inbox-unarchive-line"></i>
+            <div class="button-text">
+              <h2>Entrega</h2>
+              <p>Quero agendar entrega.</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="exit-profile">
+      <div class="content-modal">
+        <div class="title-modal">
+          <h1>Tem certeza de que deseja desconectar da sua sessão?</h1>
+        </div>
+        <div class="buttons-exit">
+          <button id="cancel">Cancelar</button>
+          <button id="disconnect">Desconectar</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/public/js/relatorio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  </body>
+</html>
